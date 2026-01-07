@@ -33,7 +33,7 @@ export class App {
   }
 
   setDisabled() {
-    return !this.useLetter && !this.useNumber && !this.useSymbol;
+    return (!this.useLetter && !this.useNumber && !this.useSymbol) || this.pwdLen < 1;
   }
 
   onClick() {
