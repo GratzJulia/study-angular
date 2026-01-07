@@ -37,9 +37,27 @@ export class App {
   }
 
   onClick() {
-    console.log(this.pwdLen);
-    console.log(this.useLetter);
-    console.log(this.useNumber);
-    console.log(this.useSymbol);
+    this.result = ''
+    const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numbers = '0123456789';
+    const symbols = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+
+    let validDomain = '';
+
+    if (this.useLetter) {
+      validDomain += letters;
+    }
+    if (this.useNumber) {
+      validDomain += numbers;
+    }
+    if (this.useSymbol) {
+      validDomain += symbols;
+    }
+
+    for (let i = 0; i < this.pwdLen; i++) {
+      const index = Math.floor(Math.random() * validDomain.length);
+      this.result += validDomain[index];
+    }
+    // console.log(this.result);
   }
 }

@@ -3,17 +3,19 @@
 <label> Length: </label>
 <input type="number" (input)="onChangePwdLen($event.target.value)" />
 
-<div>
-  <input type="checkbox" (change)="setUseLetter($event.target.checked)"/>
+<div style="margin-top: 10px;">
+  <input type="checkbox" (change)="setUseLetter($event.target.checked)" />
   <label> Use Letters</label>
 </div>
 <div>
-  <input type="checkbox" (change)="setUseNumber($event.target.checked)"/>
+  <input type="checkbox" (change)="setUseNumber($event.target.checked)" />
   <label> Use Numbers</label>
 </div>
-<div>
-  <input type="checkbox" (change)="setUseSymbol($event.target.checked)"/>
+<div style="margin-bottom: 10px;">
+  <input type="checkbox" (change)="setUseSymbol($event.target.checked)" />
   <label> Use Symbols</label>
 </div>
 
-<button [disabled]="setDisabled()">Generate!</button>
+<button [disabled]="setDisabled()" (click)="onClick()">Generate!</button>
+
+<h3>{{ result }}</h3>
