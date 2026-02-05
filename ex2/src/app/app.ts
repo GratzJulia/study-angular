@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { UserRow } from './user-row/user-row';
+import { SearchUser } from './search-user/search-user';
 
 @Component({
   selector: 'app-root',
-  imports: [UserRow],
+  imports: [UserRow, SearchUser],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
@@ -34,4 +35,14 @@ export class App {
       imgURL: 'photos/romulo.png',
     },
   ];
+
+  filteredUsers = [...this.users];
+
+  handleSearch(input: string) {
+    this.filteredUsers = this.users.filter(
+      (user) =>
+        user.name.toLowerCase().includes(input.toLowerCase()) ||
+        user.role.toLowerCase().includes(input.toLowerCase()),
+    );
+  }
 }

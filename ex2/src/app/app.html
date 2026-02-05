@@ -1,6 +1,7 @@
 <h1>User List Page</h1>
 
-@for(user of users; track $index) {
-<app-user-row [name]="user.name" [email]="user.email" [role]="user.role" [imgURL]="user.imgURL" />
+<app-search-user (searchChanged)="handleSearch($event)"></app-search-user>
 
+@for (user of filteredUsers; track user.email) {
+  <app-user-row [name]="user.name" [email]="user.email" [role]="user.role" [imgURL]="user.imgURL" />
 }
