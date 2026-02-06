@@ -4,4 +4,6 @@
 
 @for (user of filteredUsers; track user.email) {
   <app-user-row [name]="user.name" [email]="user.email" [role]="user.role" [imgURL]="user.imgURL" />
+} @empty {
+  <p style="text-align: center; margin-top: 20px">No users found!</p>
 }

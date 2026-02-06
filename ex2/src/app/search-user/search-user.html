@@ -1,8 +1,8 @@
 <div class="search-container">
   <input
-    type="text"
-    placeholder="Search by name or role"
-    (input)="onSearch($any($event.target).value)"
     class="search-input"
+    placeholder="Search by name or role"
+    type="search"
+    (input)="onSearch($any($event.target).value)"
   />
 </div>
