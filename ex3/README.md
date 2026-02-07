@@ -4,8 +4,8 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ```bash
 ng new ex3
-ng generate mod1
-ng generate mod2
+ng generate mod1 --routing
+ng generate mod2 --routing
 ng generate component mod1/Table
 ng generate component mod2/TablePage
 ```
