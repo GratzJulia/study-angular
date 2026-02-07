@@ -1,0 +1,18 @@
+<table border="1" class="table-container">
+  <thead>
+    <tr>
+      @for (col of columns; track col) {
+        <th>{{ col }}</th>
+      }
+    </tr>
+  </thead>
+  <tbody>
+    @for (row of data; track $index) {
+      <tr>
+        @for (col of columns; track col) {
+          <td>{{ row[col.toLowerCase()] }}</td>
+        }
+      </tr>
+    }
+  </tbody>
+</table>
